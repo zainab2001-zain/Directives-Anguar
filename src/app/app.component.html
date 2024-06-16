@@ -1,0 +1,41 @@
+<div class="container">
+  <h1> Structural Directives -ngif</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-success" (click)="approve(true)">Approve</button>
+      <button class="btn btn-danger" (click)="approve(false)">Reject</button>
+    </div>
+    <div class="col-md-12">
+      <p *ngIf="isApproved">Your Application has been approved</p>
+      <p *ngIf="!isApproved"> Sorry your application has been rejected</p>
+    </div>
+  </div>
+  <hr>
+  <h2>Structural Directives -ngFor</h2>
+  <div class="row">
+    <div class="col-md-12">
+      <p *ngFor="let number of numbers; let i=index">{{i+1}}={{number}}</p>
+    </div>
+  </div>
+  <hr>
+  <h1>Structural Directives - ngSwitch</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <input type="number" name="luckynumber" [(ngModel)]="luckyNumber" max="5">
+    </div>
+    <div class="col-md-12" [ngSwitch]="luckyNumber">
+      <p *ngSwitchCase="1">Strong</p>
+      <p *ngSwitchCase="2"> Weak</p>
+      <p *ngSwitchCase="3">Intellegent</p>
+      <p *ngSwitchCase="4">Fool</p>
+      <p *ngSwitchCase="5">Brave</p>
+      <p *ngSwitchDefault>Enter numbers from  1 to 5</p>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <p *ngFor="let number of numbers; let i=index">{{i+1}}={{number}}</p>
+    </div>
+  </div>
+</div>
